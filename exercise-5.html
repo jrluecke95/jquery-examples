@@ -12,7 +12,12 @@
     HINT: Lookup .attr()
     */
     $(function() {
-      // Write code here
+      const $iFrame = $('iframe')
+      $('a').on('click', function(e) {
+        e.preventDefault();
+        const url = $(this).attr('href')
+        $iFrame.attr('src', url);
+      })
     });
     </script>
   </head>

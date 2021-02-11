@@ -13,6 +13,26 @@
     2. Add the ability to check off tasks (add a checkbox that changes the style of the list item)
     3. Add the ability to edit an existing task (add an edit button that enables a text input, and a save button to confirm)
     */
+
+    $(document).ready(() => {
+      const $list = $('#todo-list');
+      const $addButton = $('#add-button');
+      const $task = $('#description');
+
+      const $delButton = $("<button style='margin-left: 5px'>Delete</button>");
+      const $checkBox = $("<input type='checkbox' style='margin-left: 5px'></input>");
+
+
+      $addButton.on('click', () => {
+        const $newTask = $(`<li>${$task.val()}</li>`)
+        .appendTo($list);
+        $task.val('');
+        $newTask.append($delButton)
+        $newTask.append($checkBox)
+        
+      })
+      
+    })
     </script>
     <style>
     #wrapper {
